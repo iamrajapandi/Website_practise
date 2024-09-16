@@ -15,7 +15,37 @@ API();
 
 async function APIDATA() {
     const apidata=await API()
-    const fl=apidata.filter((data)=>isActive)
+    // const fl=apidata.filter((data)=>isActive)
     const mp=apidata.map((data)=>{  console.log(data)})  
 }
-APIDATA()
+APIDATA();
+
+
+ function pro()
+{
+    return new Promise((resolve,reject)=>{
+        const x=true;
+        setTimeout(()=>{
+            if(x){
+                console.log("succes");
+            }
+            else{
+                
+                console.log("error");
+            }
+        },3000)
+    })
+}
+async function  datax() {
+    try {
+        const response=await pro()
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+        
+    }
+    
+}
+// datax(); 
+
+pro().then(data=>{console.log(data)}).catch(e=>{console.log(e)})
